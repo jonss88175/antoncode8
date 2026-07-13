@@ -1,57 +1,33 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YA/TIDAK</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-
-<body class="bg-slate-700 flex justify-center items-center h-screen">
-    <div class="border border-2 border-gray-600 bg-white p-4 rounded-md shadow-lg "> 
-        <img 
-        id="gambar"
-        class="rounded-md mb-3" 
-        src=" https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2xjdWM0YXhnaXpzaHdyc2prMHNlOWMwODBzcWtpbWliZHl5cjZleSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pUVOeIagS1rrqsYQJe/giphy.gif" />       
-        
-        <h1 class="font-bold text-slate-800 text-xl flex justify-center" id="kalimat">Apakah Anton Ganteng?</h1>
-        <div class="mt-3 text-white justify-center flex gap-4 "> 
-            <button onclick="yaDitekan()"
-            id="tombolYa"
-            class="bg-green-700 px-4 py-1 rounded w-32"> YA </button>
-            <button 
-            id="tombolTidak"
-            onclick="tidakDitekan()" class="bg-red-700 px-5 py-1 rounded w-32"> TIDAK </button>
-        </div>
-    </div>
-    <script>
-        let tombolYa = document.getElementById("tombolYa");
-        let tombolTidak= document.getElementById("tombolTidak"); 
-        let listKalimat = ["Coba Lagi" ,
-         "Udah Jangan di Pencet Terus" ,
-          "Bilang iya Aja" ,
-           "Mending Nyerah" , 
-           "Klik yang Hijau AJA" , 
-           "KLIKK YAA AJA WKWK"];
-           let kalimat = document.getElementById("kalimat");
-           let gambar = document.getElementById("gambar");
-
- function yaDitekan() {
-    kalimat.innerHTML = "Terima Kasih Udah Bilang Iya, GW ganteng kan";
-
-    gambar.src = "https://media1.tenor.com/m/LxaOklSNEuMAAAAC/hhgf.gif"
-
-    tombolYa.style.visibility = "hidden";
-    tombolTidak.style.visibility = "hidden";
- }
- function tidakDitekan() {
-    kalimatRandom = Math.floor(Math.random() * listKalimat.length);
-    kalimat.innerHTML = listKalimat [kalimatRandom];
-    tombolTidak.style.position = "absolute";
-    let angkaRandom = Math.floor(Math.random()* document.documentElement.clientWidth);
-    let angkaRandom2 = Math.floor(Math.random()* document.documentElement.clientHeight);
-    tombolTidak.style.left = angkaRandom + "px";
-    tombolTidak.style.top = angkaRandom2 + "px";
- }
-    </script>
-</body>
-</html> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cek Khodam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-800 flex justify-center items-center h-screen">
+    <main class="border border-2 border-gray-500 p-8 rounded text-center">
+      <h1 class="text-white text-3xl font-bold">Cek Khodam</h1>
+      <div class="flex flex-col">
+        <input
+          id="input"
+          type="text"
+          class="rounded mt-2 bg-gray-600 text-white p-1 text-center border"
+          placeholder="Masukkan nama.."
+        />
+        <button id="tombol" class="text-white p-3 bg-blue-500 rounded mt-2">
+          Mulai Cek
+        </button>
+      </div>
+      <div class="border-b border-gray-600 mt-4"></div>
+      <div class="text-white mt-2">
+        <h1>
+          Khodam <span id="nama">anda</span> adalah
+          <span id="hasil" class="text-blue-400">khodam disini</span>
+        </h1>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
